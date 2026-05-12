@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 40 40" fill="none">
+  <title>Esitimatex</title>
+  <circle cx="20" cy="20" r="20" fill="#042f2e"/>
+  <line x1="11" y1="31.25" x2="29" y2="31.25" stroke="#ffffff" stroke-opacity="0.25" stroke-width="0.65" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 12.75 10.75 L20 7.85 L27.25 10.75" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <g transform="translate(0.35 0.35)">
+    <rect x="9.25" y="12" width="2.5" height="17" rx="0.45" fill="#ffffff"/>
+    <rect x="11.75" y="12" width="9.25" height="2.5" rx="0.45" fill="#ffffff"/>
+    <rect x="11.75" y="18.125" width="6.75" height="2.5" rx="0.45" fill="#ffffff"/>
+    <rect x="11.75" y="24.25" width="9.25" height="2.5" rx="0.45" fill="#ffffff"/>
+    <path d="M 23.65 12.15 L 30.35 28.85 M 30.35 12.15 L 23.65 28.85" fill="none" stroke="#ffffff" stroke-width="2.35" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  /* EstimatesX logo palette — CTAs & accents */
+  --brand-navy: #003366;
+  --brand-blue: #1b75bc;
+  --brand-muted: #6d6e71;
+
+  /* Logo SVG gradients (light UI) */
+  --ex-arr-a: #6eb9f4;
+  --ex-arr-b: #1b75bc;
+  --ex-arr-c: #0a5a9e;
+  --ex-nvy-a: #2a6a9e;
+  --ex-nvy-b: #003366;
+  --ex-nvy-c: #001f3d;
+  --ex-spc-top: rgb(255 255 255 / 0.38);
+  --ex-spc-mid: rgb(255 255 255 / 0);
+  --ex-spc-bot: rgb(125 200 255 / 0.09);
+  --ex-tagline-muted: #6d6e71;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f1f5f9;
+
+  /* Logo SVG — lighter icy blues on dark backgrounds */
+  --ex-arr-a: rgb(255 255 255 / 0.95);
+  --ex-arr-b: #7dd3fc;
+  --ex-arr-c: #38bdf8;
+  --ex-nvy-a: #bae6fd;
+  --ex-nvy-b: #e0f2fe;
+  --ex-nvy-c: #93c5fd;
+  --ex-spc-top: rgb(255 255 255 / 0.55);
+  --ex-spc-mid: rgb(255 255 255 / 0.12);
+  --ex-spc-bot: rgb(186 230 253 / 0.35);
+  --ex-tagline-muted: #cbd5e1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-muted: var(--brand-muted);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+}
+
+::selection {
+  background-color: rgba(27, 117, 188, 0.22);
+  color: #0f172a;
+}
+
+.dark ::selection {
+  background-color: rgba(27, 117, 188, 0.28);
+  color: #f8fafc;
+}
+
+/* Logo shine sweep (navbar / footer mark) */
+@keyframes estimatesx-shine {
+  0% {
+    transform: translateX(-125%) skewX(-14deg);
+  }
+  100% {
+    transform: translateX(225%) skewX(-14deg);
+  }
+}
