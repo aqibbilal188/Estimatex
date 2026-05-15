@@ -1,0 +1,19 @@
+# Render Blueprint — EstimatesX marketing site (Next.js in /website)
+# Dashboard: https://dashboard.render.com → New → Blueprint → connect this repo
+
+services:
+  - type: web
+    name: estimatesx
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: website
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Optional: pull blog posts from WordPress (no trailing slash)
+      - key: WORDPRESS_URL
+        value: https://estimatesx.com
