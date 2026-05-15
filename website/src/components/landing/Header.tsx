@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,6 +23,15 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+
+  const closeDesktopServices = () => setDesktopServicesOpen(false);
+
+  useEffect(() => {
+    setDesktopServicesOpen(false);
+    setOpen(false);
+    setMobileServicesOpen(false);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-[100] w-full bg-transparent">
@@ -38,9 +47,15 @@ export default function Header() {
             if (item.type === "services") {
               const active = navActive(pathname, item.href);
               return (
-                <div key={item.label} className="group/services relative px-2">
+                <div
+                  key={item.label}
+                  className="relative px-2"
+                  onMouseEnter={() => setDesktopServicesOpen(true)}
+                  onMouseLeave={closeDesktopServices}
+                >
                   <Link
                     href={item.href}
+                    onClick={closeDesktopServices}
                     className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition ${
                       active
                         ? "bg-white/35 text-slate-900 shadow-sm backdrop-blur-sm dark:bg-white/15 dark:text-white"
@@ -56,7 +71,7 @@ export default function Header() {
                       />
                     </svg>
                   </Link>
-                  <ServicesMegaMenu />
+                  <ServicesMegaMenu open={desktopServicesOpen} onLinkClick={closeDesktopServices} />
                 </div>
               );
             }
